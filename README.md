@@ -1,5 +1,7 @@
 # tei-doc-link
-Provides automatic linking of element and attribute names in code snippets to their respective page within the TEI-P5-XML documentation using JavaScript.
+
+## TEI Documentation Links
+Provides automatic linking of element and attribute names in code snippets to their respective page within the TEI-P5-XML documentation using JavaScript. Tested with [Highlight.js](http://idodev.co.uk/2013/03/syntax-highlighting-with-highlightjs/) and [Impress.js](https://github.com/impress/impress.js/); should, however, also work in the context of “normal” web pages.
 
 It also provides a simple CSS stylesheet to mimic the Atom dark theme. The classes used by the CSS are applied by JavaScript and are as follows:
 
