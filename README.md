@@ -36,6 +36,14 @@ Every element name recognized as such by the regular expression will be linked t
 
 Attribute names will be linked, if they are part of the following list: `["type", "subtype", "xml:id", "xml:lang", "n", "key", "ref", "rend", "style", "rendition", "resp", "cert", "lemma", "lemmaRef", "role", "nymRef", "sex", "age", "unit", "quantity", "extent", "precision", "scope", "atLeast", "atMost", "min", "max", "confidence", "hand", "place", "scribe", "scribeRef", "script", "scriptRef", "medium", "reason", "agent", "corresp", "synch", "sameAs", "copyOf", "next", "prev", "exclude", "select", "when", "notBefore", "notAfter", "from", "to", "when-iso", "notBefore-iso", "notAfter-iso", "from-iso", "to-iso", "when-custom", "notBefore-custom", "notAfter-custom", "from-custom", "to-custom", "datingPoint", "datingMethod", "dur", "dur-iso", "break", "calendar", "period", "status", "cause", "seq", "who", "ana", "facs", "met", "real", "rhyme", "value", "locus", "assertedValue", "given", "degree"]`
 
+## Example
+
+When it works, it should look like this:
+
+![Code Snippet with links to TEI documentation and dark theme](data/img/tei-doc-link_001.png)
+
+![Link from attribute name to TEI documentation](data/img/tei-doc-link_002.png)
+
 ## To Do
 
 * Revise and evaluate the list of attribute names.
