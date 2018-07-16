@@ -18,7 +18,7 @@ N.B.: Third party libraries may provide their own markup and classes. Thus there
 ## Usage
 Include the JavaScript file at the bottom of your HTML page.  Just before that you may provide the class names of the code snippets where you want to link to the TEI documentation in the constant variable `TEI_DOC_LINK` .
 
-N.b.: the CSS file expects `xml tei-doc-link` on `code` and if `TEI_DOC_LINK` is not provided, it will be set as `xml tei-doc-link`.
+N.b.: the CSS file expects the classes `xml tei-doc-link` on the element `<code>`. When `TEI_DOC_LINK` is not provided, it will be automatically set as `xml tei-doc-link`.
 
 ```html
 <html>
