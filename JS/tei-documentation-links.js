@@ -1,3 +1,4 @@
+// @see https://github.com/hou2zi0/tei-doc-link
 if (typeof TEI_DOC_LINK === 'undefined') TEI_DOC_LINK = `xml tei-doc-link`;
 
 
