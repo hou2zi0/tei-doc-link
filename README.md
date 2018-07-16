@@ -140,6 +140,7 @@ The line numbers are provided by [Highlight.js](http://idodev.co.uk/2013/03/synt
 ## To Do
 
 * Revise and evaluate the list of attribute names.
+* Link attribute names to their respective url fragment.
 * Refactor the RegEx recognizing element names.
 * Include element context in linking of attribute names.
 * Provide line numbering.
