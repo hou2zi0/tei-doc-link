@@ -20,7 +20,7 @@ N.b.: the CSS file expects `xml tei-doc-link` on `code` and if `TEI_DOC_LINK` is
 <html>
   <head/>
   <body>
-  <pre><code class="xml tei-doc-link">&lt;gap reason="ellipsis"/&gt;</code></pre>
+    <pre><code class="xml tei-doc-link">&lt;gap reason="ellipsis"/&gt;</code></pre>
   […]
     <script>
       const TEI_DOC_LINK = `xml tei-doc-link`;
@@ -32,7 +32,9 @@ N.b.: the CSS file expects `xml tei-doc-link` on `code` and if `TEI_DOC_LINK` is
 
 ## What elements and attributes will be linked?
 
-Every element name recognized as such by the regular expression will be linked to its assumed TEI documentation page, regardless of its actual existence. Attribute names will be linked, if they are part of the following list: `["type", "subtype", "xml:id", "xml:lang", "n", "key", "ref", "rend", "style", "rendition", "resp", "cert", "lemma", "lemmaRef", "role", "nymRef", "sex", "age", "unit", "quantity", "extent", "precision", "scope", "atLeast", "atMost", "min", "max", "confidence", "hand", "place", "scribe", "scribeRef", "script", "scriptRef", "medium", "reason", "agent", "corresp", "synch", "sameAs", "copyOf", "next", "prev", "exclude", "select", "when", "notBefore", "notAfter", "from", "to", "when-iso", "notBefore-iso", "notAfter-iso", "from-iso", "to-iso", "when-custom", "notBefore-custom", "notAfter-custom", "from-custom", "to-custom", "datingPoint", "datingMethod", "dur", "dur-iso", "break", "calendar", "period", "status", "cause", "seq", "who", "ana", "facs", "met", "real", "rhyme", "value", "locus", "assertedValue", "given", "degree"]`
+Every element name recognized as such by the regular expression will be linked to its assumed TEI documentation page, regardless of its actual existence.
+
+Attribute names will be linked, if they are part of the following list: `["type", "subtype", "xml:id", "xml:lang", "n", "key", "ref", "rend", "style", "rendition", "resp", "cert", "lemma", "lemmaRef", "role", "nymRef", "sex", "age", "unit", "quantity", "extent", "precision", "scope", "atLeast", "atMost", "min", "max", "confidence", "hand", "place", "scribe", "scribeRef", "script", "scriptRef", "medium", "reason", "agent", "corresp", "synch", "sameAs", "copyOf", "next", "prev", "exclude", "select", "when", "notBefore", "notAfter", "from", "to", "when-iso", "notBefore-iso", "notAfter-iso", "from-iso", "to-iso", "when-custom", "notBefore-custom", "notAfter-custom", "from-custom", "to-custom", "datingPoint", "datingMethod", "dur", "dur-iso", "break", "calendar", "period", "status", "cause", "seq", "who", "ana", "facs", "met", "real", "rhyme", "value", "locus", "assertedValue", "given", "degree"]`
 
 ## To Do
 
