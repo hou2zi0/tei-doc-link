@@ -2,7 +2,7 @@
 if (typeof TEI_DOC_LINK === 'undefined') TEI_DOC_LINK = `xml tei-doc-link`;
 
 
-const codeList = document.getElementsByClassName(TEI_DOC_LINK);
+const codeList = document.querySelectorAll(TEI_DOC_LINK);
 //console.log(codeList);
 //console.log(codeList[0].textContent);
 
