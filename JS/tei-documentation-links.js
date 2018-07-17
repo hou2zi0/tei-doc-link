@@ -109,7 +109,7 @@ Array.from(codeList)
       };
       let attribute = p1;
       if (attribute in tei_attributes) {
-        attribute = `<a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-${tei_attributes[attribute]}.html'>${attribute}</a>`
+        attribute = `<a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-${tei_attributes[attribute]}.html#tei_att.${attribute}'>${attribute}</a>`
       }
       const value = p2;
       const regstr = `<span class="attribute">${attribute}</span><span class="delimiters">=</span><span class="value">"${value}"</span>`;
