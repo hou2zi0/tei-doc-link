@@ -139,6 +139,8 @@ When it works, it should look like this:
 
 The line numbers are provided by [Highlight.js](http://idodev.co.uk/2013/03/syntax-highlighting-with-highlightjs/).
 
+A simple live example may be found [here](https://hou2zi0.github.io/tei-doc-link/examples/example.html).
+
 ## To Do
 
 * Revise and evaluate the list of attribute names.
