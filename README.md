@@ -1,5 +1,18 @@
 # tei-doc-link
 
+<!-- TOC START min:1 max:3 link:true update:true -->
+- [tei-doc-link](#tei-doc-link)
+  - [TEI Documentation Links](#tei-documentation-links)
+  - [Usage](#usage)
+    - [What elements and attributes will be linked?](#what-elements-and-attributes-will-be-linked)
+    - [Examples](#examples)
+  - [To Do](#to-do)
+  - [License](#license)
+
+<!-- TOC END -->
+
+
+
 ## TEI Documentation Links
 Provides automatic linking of element and attribute names in code snippets to their respective page within the TEI-P5-XML documentation using JavaScript. Tested with [Highlight.js](http://idodev.co.uk/2013/03/syntax-highlighting-with-highlightjs/) and [Impress.js](https://github.com/impress/impress.js/); should, however, also work in the context of “normal” web pages.
 
@@ -36,7 +49,7 @@ N.b.: the CSS file expects the classes `xml tei-doc-link` on the element `<code>
 </html>
 ```
 
-## What elements and attributes will be linked?
+### What elements and attributes will be linked?
 
 Every element name recognized as such by the regular expression will be linked to its assumed TEI documentation page, regardless of its actual existence.
 
@@ -129,7 +142,7 @@ Attribute names will be linked, if they are part of the following dictionary:
 }
 ```
 
-## Example
+### Examples
 
 When it works, it should look like this:
 
