@@ -157,6 +157,8 @@ A simple live example may be found [here](https://hou2zi0.github.io/tei-doc-link
 ## To Do
 
 * Revise and evaluate the list of attribute names.
+* Provide “Preferences” object for customization and user adjustment.
+* Provide possibility to switch between languages of TEI documentation (via “Preferences” object).
 * ~~Link attribute names to their respective url fragment.~~
 * Refactor the RegEx recognizing element names.
 * Include element context in linking of attribute names.
