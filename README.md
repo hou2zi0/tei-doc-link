@@ -4,13 +4,15 @@
 - [tei-doc-link](#tei-doc-link)
   - [TEI Documentation Links](#tei-documentation-links)
   - [Usage](#usage)
+    - [Overview](#overview)
+    - [Query selector options](#query-selector-options)
+    - [Language options](#language-options)
     - [What elements and attributes will be linked?](#what-elements-and-attributes-will-be-linked)
     - [Examples](#examples)
   - [To Do](#to-do)
   - [License](#license)
 
 <!-- TOC END -->
-
 
 
 ## TEI Documentation Links
@@ -31,6 +33,7 @@ N.B.: Third party libraries may provide their own markup and classes. Thus there
 N.b.: The file in the `JS` folder is going to be (mostly) stable. Development work will be carried out in `dev`.
 
 ## Usage
+### Overview
 Include the JavaScript file at the bottom of your HTML page.  Just before that you may provide the class names of the code snippets where you want to link to the TEI documentation in the constant variable `TEI_DOC_LINK` .
 
 N.b.: by default the CSS and the JS files
@@ -51,6 +54,7 @@ When `TEI_DOC_LINK` is not provided, it will be automatically set as `xml tei-do
       const TEI_DOC_LINK = `xml tei-doc-link`;
       const TEI_DOC_LINK_CONFIG = {
         "querySelectorAll": false,
+        "language": "english",
         "lineNumbering": false // not yet implemented
       }
     </script>
@@ -58,6 +62,44 @@ When `TEI_DOC_LINK` is not provided, it will be automatically set as `xml tei-do
   </body>
 </html>
 ```
+
+### Query selector options
+
+To switch to the `document.querySelectorAll()` selector method set `TEI_DOC_LINK_CONFIG.querySelectorAll = true`. Don’t forget to provide a valid query, e.g. `pre code.xml.highlight`.
+
+```html
+<script>
+  const TEI_DOC_LINK = `pre code.xml.highlight`;
+  const TEI_DOC_LINK_CONFIG = {
+    "querySelectorAll": true
+  }
+</script>
+```
+
+### Language options
+
+You may change the localization of the linked documentation by setting the `TEI_DOC_LINK_CONFIG.language = "en"` to a valid value indicating the target language (for possible values see below).
+
+```html
+<script>
+  const TEI_DOC_LINK = `pre code.xml.highlight`;
+  const TEI_DOC_LINK_CONFIG = {
+    "language": "english",
+  }
+</script>
+```
+
+Possible values for `TEI_DOC_LINK_CONFIG.language` are as follows:
+
+* `en` or `english` for English.
+* `de` or `german` for German.
+* `es` or `spanish` for Spanish.
+* `it` or `italian` for Italian.
+* `fr` or `french` for French.
+* `ja` or `japanese` for Japanese.
+* `ko` or `korean` for Korean.
+* `zh-TW` or `traditional chinese` for traditional Chinese characters.
+
 
 ### What elements and attributes will be linked?
 
@@ -168,7 +210,7 @@ A simple live example may be found [here](https://hou2zi0.github.io/tei-doc-link
 
 * Revise and evaluate the list of attribute names.
 * ~~Provide “Configuration object” for customization and user adjustment.~~
-* Provide possibility to switch between languages of TEI documentation (via “Configuration object”).
+* ~~Provide possibility to switch between languages of TEI documentation (via “Configuration object”).~~
 * ~~Link attribute names to their respective url fragment.~~
 * Refactor the RegEx recognizing element names.
 * Include element context in linking of attribute names.
