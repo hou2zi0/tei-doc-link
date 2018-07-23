@@ -28,10 +28,16 @@ It also provides a simple CSS stylesheet to mimic the Atom dark theme. The class
 
 N.B.: Third party libraries may provide their own markup and classes. Thus there’s a possibility that the CSS gets scrambled, when too many libraries work on the codes snippets.
 
+N.b.: The file in the `JS` folder is going to be (mostly) stable. Development work will be carried out in `dev`.
+
 ## Usage
 Include the JavaScript file at the bottom of your HTML page.  Just before that you may provide the class names of the code snippets where you want to link to the TEI documentation in the constant variable `TEI_DOC_LINK` .
 
-N.b.: the CSS file expects the classes `xml tei-doc-link` on the element `<code>`. When `TEI_DOC_LINK` is not provided, it will be automatically set as `xml tei-doc-link`.
+N.b.: by default the CSS file
+* expects the classes `xml tei-doc-link` on the element `<code>`
+* and applies the `document.getElementsByClassName()` selector method.
+
+When `TEI_DOC_LINK` is not provided, it will be automatically set as `xml tei-doc-link`. You may switch to the `document.querySelectorAll()` selector method by setting the `querySelectorAll` property in `TEI_DOC_LINK_CONFIG` to `true` (see below). When you switch the selector method, you must also provide a valid query in `TEI_DOC_LINK`, e.g. `pre code.xml.highlight`.
 
 ```html
 <html>
@@ -43,6 +49,10 @@ N.b.: the CSS file expects the classes `xml tei-doc-link` on the element `<code>
   […]
     <script>
       const TEI_DOC_LINK = `xml tei-doc-link`;
+      const TEI_DOC_LINK_CONFIG = {
+        "querySelectorAll": false,
+        "lineNumbering": false // not yet implemented
+      }
     </script>
       <script type="text/javascript" src="https://hou2zi0.github.io/tei-doc-link/JS/tei-documentation-links.js"></script>
   </body>
