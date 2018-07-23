@@ -1,7 +1,6 @@
 // @see https://github.com/hou2zi0/tei-doc-link
 if (typeof TEI_DOC_LINK === 'undefined') TEI_DOC_LINK = `xml tei-doc-link`;
 
-
 let codeList;
 
 if (TEI_DOC_LINK_CONFIG.querySelectorAll) {
@@ -9,6 +8,8 @@ if (TEI_DOC_LINK_CONFIG.querySelectorAll) {
 } else {
   codeList = document.getElementsByClassName(TEI_DOC_LINK);
 }
+
+
 
 Array.from(codeList)
   .forEach((n) => {
