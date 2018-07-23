@@ -1,6 +1,8 @@
 // @see https://github.com/hou2zi0/tei-doc-link
 if (typeof TEI_DOC_LINK === 'undefined') TEI_DOC_LINK = `xml tei-doc-link`;
 
+if (typeof TEI_DOC_LINK_CONFIG.language === 'undefined') TEI_DOC_LINK_CONFIG.language = `en`;
+
 let codeList;
 
 if (TEI_DOC_LINK_CONFIG.querySelectorAll) {
@@ -9,17 +11,36 @@ if (TEI_DOC_LINK_CONFIG.querySelectorAll) {
   codeList = document.getElementsByClassName(TEI_DOC_LINK);
 }
 
-
+const language_options = {
+  "en": "en",
+  "english": "en",
+  "de": "de",
+  "german": "de",
+  "es": "es",
+  "spanish": "es",
+  "it": "it",
+  "italian": "it",
+  "fr": "fr",
+  "french": "fr",
+  "ja": "ja",
+  "japanese": "ja",
+  "ko": "ko",
+  "korean": "ko",
+  "zh-TW": "zh-TW",
+  "traditional chinese": "zh-TW",
+};
 
 Array.from(codeList)
   .forEach((n) => {
+    const language_option = language_options[TEI_DOC_LINK_CONFIG.language];
+
     const text = n.textContent.replace(/</g, "&lt;")
       .replace(/>/g, "&gt;");
 
     // ELEMENT NAMES
     const regexEl = `&lt;(\/{0,1})([-A-Za-z:]*?)(\\s.*?.*?){0,1}(\/{0,1})&gt;`;
     const regularExpressionEl = new RegExp(regexEl, 'g');
-    const newSnippetEl = text.replace(regularExpressionEl, "<span class='delimiters'>&lt;$1</span><span class='element'><a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-$2.html'>$2</a>$3</span><span class='delimiters'>$4&gt;</span>");
+    const newSnippetEl = text.replace(regularExpressionEl, `<span class='delimiters'>&lt;$1</span><span class='element'><a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/${language_option}/html/ref-$2.html'>$2</a>$3</span><span class='delimiters'>$4&gt;</span>`);
 
     // ATTRIBUTES & VALUES
     const regexAttr = `([-A-Za-z:]*?)="(.*?)"`;
@@ -114,7 +135,7 @@ Array.from(codeList)
       };
       let attribute = p1;
       if (attribute in tei_attributes) {
-        attribute = `<a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-${tei_attributes[attribute]}.html#tei_att.${attribute.replace(':','-')}'>${attribute}</a>`
+        attribute = `<a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/${language_option}/html/ref-${tei_attributes[attribute]}.html#tei_att.${attribute.replace(':','-')}'>${attribute}</a>`
       }
       const value = p2;
       const regstr = `<span class="attribute">${attribute}</span><span class="delimiters">=</span><span class="value">"${value}"</span>`;
