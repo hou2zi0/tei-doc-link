@@ -105,7 +105,10 @@ Possible values for `TEI_DOC_LINK_CONFIG.language` are as follows:
 
 Every element name recognized as such by the regular expression will be linked to its assumed TEI documentation page, regardless of its actual existence.
 
-Attribute names will be linked, if they are part of the following dictionary:
+Attribute names will be linked, if they are part of the following dictionaries. The first and larger dictionary will for the most part provide links to the more general attribute description pages within the documentation. The second dictionary will provide links to the more specific attribute description within an element’s description page.
+
+General lookup dictionary:
+
 ```javascript
 {
   "type": "att.typed",
@@ -193,6 +196,26 @@ Attribute names will be linked, if they are part of the following dictionary:
   "degree": "certainty"
 }
 ```
+
+Specific lookup dictionary:
+
+```javascript
+{
+  "correspAction:type": "correspAction",
+  "gap:reason": "gap",
+  "gap:agent": "gap",
+  "supplied:reason": "supplied",
+  "num:type": "num",
+  "num:value": "num",
+  "space:resp": "space",
+  "space:dim": "space",
+  "pc:force": "pc",
+  "pc:unit": "pc",
+  "pc:pre": "pc",
+  "person:role": "person"
+}
+```
+
 
 ### Examples
 
