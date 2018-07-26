@@ -55,7 +55,6 @@ Array.from(codeList)
 
       // Replace function for RegEx maps attribute names to respective TEI documentation pages
       function attributeReplacer(match, p1, p2, offset, string) {
-        console.log(element);
         const tei_attributes = {
           "type": "att.typed",
           "subtype": "att.typed",
@@ -140,10 +139,23 @@ Array.from(codeList)
           "assertedValue": "certainty",
           "given": "certainty",
           "degree": "certainty",
+          "evidence": "att.editLike",
+          "instant": "att.editLike",
         };
 
         const tei_attributes_specific = {
-          "correspAction:type": "correspAction"
+          "correspAction:type": "correspAction",
+          "gap:reason": "gap",
+          "gap:agent": "gap",
+          "supplied:reason": "supplied",
+          "num:type": "num",
+          "num:value": "num",
+          "space:resp": "space",
+          "space:dim": "space",
+          "pc:force": "pc",
+          "pc:unit": "pc",
+          "pc:pre": "pc",
+          "person:role": "person",
         }
 
         let attribute = p1;
