@@ -230,9 +230,11 @@ When it works, it should look like this:
 
 ![Link from attribute name to TEI documentation](data/img/tei-doc-link_002.png)
 
-The line numbers are provided by [Highlight.js](http://idodev.co.uk/2013/03/syntax-highlighting-with-highlightjs/).
+The line numbers in the examples above are provided by [Highlight.js](http://idodev.co.uk/2013/03/syntax-highlighting-with-highlightjs/).
 
-A simple live example may be found [here](https://hou2zi0.github.io/tei-doc-link/examples/example.html).
+![Code Snippet with links to TEI documentation, dark theme, and built-in line numbering](data/img/tei-doc-link_003.png)
+
+The simple example shows the built-in line numbering feature.  The corresponding live example may be found  [here](https://hou2zi0.github.io/tei-doc-link/examples/example.html).
 
 ## To Do
 
