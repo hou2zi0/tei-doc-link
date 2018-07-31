@@ -12,6 +12,8 @@ if (TEI_DOC_LINK_CONFIG.querySelectorAll) {
   codeList = document.getElementsByClassName(TEI_DOC_LINK);
 }
 
+;
+
 function teiDocLinks() {
   const TEI_DOC_LINK_CONSTANTS = {
     "language_options": {
@@ -137,59 +139,59 @@ function teiDocLinks() {
     }
   };
 
+  const language_option = TEI_DOC_LINK_CONSTANTS.language_options[TEI_DOC_LINK_CONFIG.language]
+
+  // elementReplacer function (includes attribute attributeReplacer function declaration)
+  function elementReplacer(match, p1, p2, p3, p4, offset, string) {
+    const frontDelimiters = (p1) ? p1 : "";
+    const element = (p2) ? p2 : "";
+    const attribute = (p3) ? p3 : "";
+    const backDelimiter = (p4) ? p4 : "";
+
+    // ATTRIBUTES & VALUES
+    const regexAttr = `([-A-Za-z:]*?)="(.*?)"`;
+    const regularExpressionAttr = new RegExp(regexAttr, 'g');
+
+    // Replace function for RegEx maps attribute names to respective TEI documentation pages
+    function attributeReplacer(match, p1, p2, offset, string) {
+      const tei_attributes = TEI_DOC_LINK_CONSTANTS.tei_attribute_lookup.common;
+      const tei_attributes_specific = TEI_DOC_LINK_CONSTANTS.tei_attribute_lookup.specific;
+
+      let attribute = p1;
+      let curr_element = element;
+
+      if (attribute in tei_attributes) {
+        const tei_attribute = (tei_attributes_specific[`${curr_element}:${attribute}`]) ? tei_attributes_specific[`${curr_element}:${attribute}`] : tei_attributes[attribute];
+
+        attribute = `<a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/${language_option}/html/ref-${tei_attribute}.html#tei_att.${attribute.replace(':','-')}'>${attribute}</a>`
+      }
+
+      const value = p2;
+      return `<span class="attribute">${attribute}</span><span class="delimiters">=</span><span class="value">"${value}"</span>`;
+    }
+
+    const newSnippetAttr = attribute.replace(regularExpressionAttr, attributeReplacer);
+
+    return `<span class='delimiters'>&lt;${frontDelimiters}</span><span class='element'><a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/${language_option}/html/ref-${element}.html'>${element}</a>${newSnippetAttr}</span><span class='delimiters'>${backDelimiter}&gt;</span>`;
+  }
+
+
+  // PROCESSING of found node list
   Array.from(codeList)
-    .forEach((n) => {
-      const language_option = TEI_DOC_LINK_CONSTANTS.language_options[TEI_DOC_LINK_CONFIG.language];
-
-      const text = n.textContent.replace(/</g, "&lt;")
+    .forEach((node) => {
+      const text = node.textContent.replace(/</g, "&lt;")
         .replace(/>/g, "&gt;");
-
       // ELEMENT NAMES
       const regexEl = `&lt;(\/{0,1})([-A-Za-z:]*?)(\\s.*?.*?){0,1}(\/{0,1})&gt;`;
       const regularExpressionEl = new RegExp(regexEl, 'g');
-
-      function elementReplacer(match, p1, p2, p3, p4, offset, string) {
-
-        const frontDelimiters = (p1) ? p1 : "";
-        const element = (p2) ? p2 : "";
-        const attribute = (p3) ? p3 : "";
-        const backDelimiter = (p4) ? p4 : "";
-
-        // ATTRIBUTES & VALUES
-        const regexAttr = `([-A-Za-z:]*?)="(.*?)"`;
-        const regularExpressionAttr = new RegExp(regexAttr, 'g');
-
-        // Replace function for RegEx maps attribute names to respective TEI documentation pages
-        function attributeReplacer(match, p1, p2, offset, string) {
-          const tei_attributes = TEI_DOC_LINK_CONSTANTS.tei_attribute_lookup.common;
-          const tei_attributes_specific = TEI_DOC_LINK_CONSTANTS.tei_attribute_lookup.specific;
-
-          let attribute = p1;
-          let curr_element = element;
-
-          if (attribute in tei_attributes) {
-            const tei_attribute = (tei_attributes_specific[`${curr_element}:${attribute}`]) ? tei_attributes_specific[`${curr_element}:${attribute}`] : tei_attributes[attribute];
-
-            attribute = `<a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/${language_option}/html/ref-${tei_attribute}.html#tei_att.${attribute.replace(':','-')}'>${attribute}</a>`
-          }
-
-          const value = p2;
-          return `<span class="attribute">${attribute}</span><span class="delimiters">=</span><span class="value">"${value}"</span>`;
-        }
-
-        const newSnippetAttr = attribute.replace(regularExpressionAttr, attributeReplacer);
-
-        return `<span class='delimiters'>&lt;${frontDelimiters}</span><span class='element'><a class='tei-doc-link' href='http://www.tei-c.org/release/doc/tei-p5-doc/${language_option}/html/ref-${element}.html'>${element}</a>${newSnippetAttr}</span><span class='delimiters'>${backDelimiter}&gt;</span>`;
-      }
-
+      // for elementReplacer function declaration and attributeReplacer function declaration see above
       const newSnippetEl = text.replace(regularExpressionEl, elementReplacer);
-
       // COMMENT STRINGS
       const regexCommStr = `(&lt;\!)(.*?)(&gt;)`;
       const regularExpressionCommStr = new RegExp(regexCommStr, 'g');
       const newSnippetCommStr = newSnippetEl.replace(regularExpressionCommStr, '<span class="comment-string">$1$2$3</span>');
 
-      n.innerHTML = newSnippetCommStr;
+      node.innerHTML = newSnippetCommStr;
     });
 };
 
