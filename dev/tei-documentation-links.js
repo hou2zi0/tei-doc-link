@@ -199,11 +199,9 @@ function teiDocLinks() {
             return line.length > 0
           })
           .map((line, index) => {
-            console.log(line.length);
             return `<span class="line_numbering">${index+1}</span><span class="code_line">${line}</span>`;
           })
           .join('\n');
-        console.log(node.parentNode);
         node.parentNode.setAttribute('style', 'padding-left: 35px;');
       } else {
         snippet = newSnippetCommStr;
