@@ -33,7 +33,6 @@ span.attribute a.tei-doc-link:hover {
 code.tei-doc-link {
   color: #abb2bf;
   background-color: #282c34 !important;
-
 }
 
 span.element span.value span.hljs-string {
@@ -64,3 +63,26 @@ li code.xml.tei-doc-link, p code.xml.tei-doc-link, blockquote code.xml.tei-doc-l
   white-space: pre-line !important;
   font-style: normal !important;
 }
+
+pre {
+  border: 1px solid black;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 10px 15px 10px 15px;
+  background-color: #282c34 !important;
+}
+
+span.line_numbering {
+  text-align: right;
+  display: inline-block;
+  min-width: 2em;
+  position: relative;
+  padding-right: 0.5em;
+  margin-left: -2.5em;
+  margin-right: 0.2em;
+}
+
+
+
+span.code_line {}

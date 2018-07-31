@@ -272,6 +272,21 @@
       text-align: center;
     }
 
+    span.line_numbering {
+      text-align: right;
+      display: inline-block;
+      min-width: 2em;
+      position: relative;
+      padding-right: 0.5em;
+      margin-left: -2.5em;
+      margin-right: 0.2em;
+    }
+
+
+
+    span.code_line {}
+
+
     @media only screen and (min-width: 480px) {
       body {
         font-size: 14px;
@@ -301,7 +316,7 @@
   &lt;correspAction type="received"&gt;
     &lt;persName xml:lang="de" ref="http://d-nb.info/gnd/118540987"&gt;
       &lt;forename&gt;Mina&lt;/forename&gt;
-      &lt;surname&gt;Musterfrau&lt;/surname&gt;
+      &lt;surname&gt;Musterfrau Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sit Lorem ipsum dolor sit&lt;/surname&gt;
     &lt;/persName&gt;
   &lt;/correspAction&gt;
 &lt;/correspDesc&gt;
@@ -315,11 +330,11 @@
   </p>
   <script>
     // const TEI_DOC_LINK = `xml tei-doc-link`;
-    // const TEI_DOC_LINK_CONFIG = {
-    //   "querySelectorAll": false,
-    //   "language": "english",
-    //   "lineNumbering": false // not yet implemented
-    // }
+    const TEI_DOC_LINK_CONFIG = {
+      //   "querySelectorAll": false,
+      //   "language": "english",
+      "lineNumbering": true // not yet implemented
+    }
   </script>
   <script type="text/javascript" src="tei-documentation-links.js"></script>
 </body>
