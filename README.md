@@ -30,8 +30,8 @@ It also provides a simple CSS stylesheet to mimic the Atom dark theme. The class
 
 When `lineNumbering` is set to `true`, the following markup applies as well:
 
-* `span.line_numbering`
-* `span.code_line`
+* `span.line-numbering`
+* `span.code-line`
 
 N.B.: Third party libraries may provide their own markup and classes. Thus there’s a possibility that the CSS gets scrambled, when too many libraries work on the codes snippets.
 
