@@ -18,7 +18,9 @@
 ## TEI Documentation Links
 Provides automatic linking of element and attribute names in code snippets to their respective page within the TEI-P5-XML documentation using JavaScript.
 
-Tested with [Impress.js](https://github.com/impress/impress.js/). Also works, of course, in the context of “normal” web pages, e.g. see live demo [here](https://hou2zi0.github.io/tei-doc-link/examples/example.html).
+Tested with [Impress.js](https://github.com/impress/impress.js/) and  [Highlight.js](http://idodev.co.uk/2013/03/syntax-highlighting-with-highlightjs/) (propably needs some css fine tuning depending on your other packages).
+
+Also works, of course, in the context of “normal” web pages, e.g. see live demo [here](https://hou2zi0.github.io/tei-doc-link/examples/example.html).
 
 It also provides a simple CSS stylesheet to mimic the Atom dark theme. The classes used by the CSS are applied by JavaScript and are as follows:
 
@@ -35,7 +37,7 @@ When `lineNumbering` is set to `true`, the following markup applies as well:
 * `span.line-numbering`
 * `span.code-line`
 
-N.B.: Third party libraries may provide their own markup and classes. Thus there’s a possibility that the CSS gets scrambled, when too many libraries work on the codes snippets. 
+N.B.: Third party libraries may provide their own markup and classes. Thus there’s a possibility that the CSS gets scrambled, when too many libraries work on the codes snippets.
 
 N.b.: The file in the `JS` folder is going to be (mostly) stable. Development work will be carried out in `dev`.
 
