@@ -206,6 +206,8 @@ function teiDocLinks() {
         snippet = newSnippetCommStr;
         if (node.getAttribute('class')
           .includes('has-linenumbers')) {
+          console.log(node.getAttribute('class')
+            .includes('has-linenumbers'));
           node.parentNode.setAttribute('style', 'padding: 0px 15px 0px 35px;');
         }
       }
