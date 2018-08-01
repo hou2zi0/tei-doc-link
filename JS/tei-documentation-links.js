@@ -201,7 +201,7 @@ function teiDocLinks() {
             return `<span class="line-numbering">${index+1}</span><span class="code-line">${line}</span>`;
           })
           .join('\n');
-        node.parentNode.setAttribute('style', 'padding-left: 35px;');
+        node.parentNode.setAttribute('style', 'padding: 10px 15px 10px 35px;');
       } else {
         snippet = newSnippetCommStr;
       }
