@@ -16,7 +16,11 @@
 
 
 ## TEI Documentation Links
-Provides automatic linking of element and attribute names in code snippets to their respective page within the TEI-P5-XML documentation using JavaScript. Tested with [Highlight.js](http://idodev.co.uk/2013/03/syntax-highlighting-with-highlightjs/) and [Impress.js](https://github.com/impress/impress.js/); also works, of course, in the context of “normal” web pages, e.g. see live demo [here](https://hou2zi0.github.io/tei-doc-link/examples/example.html).
+Provides automatic linking of element and attribute names in code snippets to their respective page within the TEI-P5-XML documentation using JavaScript.
+
+Tested with [Highlight.js](http://idodev.co.uk/2013/03/syntax-highlighting-with-highlightjs/) and [Impress.js](https://github.com/impress/impress.js/).
+
+Also works, of course, in the context of “normal” web pages, e.g. see live demo [here](https://hou2zi0.github.io/tei-doc-link/examples/example.html).
 
 It also provides a simple CSS stylesheet to mimic the Atom dark theme. The classes used by the CSS are applied by JavaScript and are as follows:
 

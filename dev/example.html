@@ -145,7 +145,6 @@
 
     pre {
       border: 1px solid black;
-      white-space: pre;
       white-space: pre-wrap;
       word-wrap: break-word;
       padding: 10px 15px 10px 15px;
@@ -283,6 +282,11 @@
     }
 
 
+    code {
+      border: 0px solid black !important;
+      white-space: pre-wrap !important;
+      word-wrap: break-word !important;
+    }
 
     span.code-line {}
 
@@ -306,7 +310,9 @@
 <body>
   <h1>TEI Documentation Links</h1>
   <h2>Example</h2>
-  <pre><code class="xml tei-doc-link">&lt;correspDesc xml:id="unique_letter_id"&gt;
+  <pre><code class="xml tei-doc-link">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+    […]
+&lt;correspDesc xml:id="unique_letter_id"&gt;
   &lt;correspAction type="sent"&gt;
     &lt;persName xml:lang="de" ref="http://d-nb.info/gnd/118540238"&gt;
       &lt;forename&gt;Max&lt;/forename&gt;
@@ -333,7 +339,7 @@
     const TEI_DOC_LINK_CONFIG = {
       //     "querySelectorAll": false,
       //     "language": "english",
-      "lineNumbering": true // not yet implemented
+      "lineNumbering": true, // not yet implemented
     }
   </script>
   <script type="text/javascript" src="tei-documentation-links.js"></script>

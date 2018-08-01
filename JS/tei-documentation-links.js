@@ -12,7 +12,6 @@ if (TEI_DOC_LINK_CONFIG.querySelectorAll) {
   codeList = document.getElementsByClassName(TEI_DOC_LINK);
 }
 
-;
 
 function teiDocLinks() {
   const TEI_DOC_LINK_CONSTANTS = {
@@ -182,7 +181,7 @@ function teiDocLinks() {
       const text = node.textContent.replace(/</g, "&lt;")
         .replace(/>/g, "&gt;");
       // ELEMENT NAMES
-      const regexEl = `&lt;(\/{0,1})([-A-Za-z:]*?)(\\s.*?.*?){0,1}(\/{0,1})&gt;`;
+      const regexEl = `&lt;([\/\?]{0,1})([-A-Za-z:]*?)(\\s.*?.*?){0,1}([\/\?]{0,1})&gt;`;
       const regularExpressionEl = new RegExp(regexEl, 'g');
       // for elementReplacer function declaration and attributeReplacer function declaration see above
       const newSnippetEl = text.replace(regularExpressionEl, elementReplacer);
@@ -193,7 +192,7 @@ function teiDocLinks() {
 
       let snippet;
 
-      if (TEI_DOC_LINK_CONFIG.lineNumbering) {
+      if (TEI_DOC_LINK_CONFIG.lineNumbering && node.parentNode.nodeName == 'PRE') {
         snippet = newSnippetCommStr.split('\n')
           .filter((line) => {
             return line.length > 0
