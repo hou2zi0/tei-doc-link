@@ -205,7 +205,7 @@ function teiDocLinks() {
       } else {
         snippet = newSnippetCommStr;
         console.log(node.getAttribute('class')
-          .includes('has-linenumbers'));
+          .includes('linenumbers'));
         if (node.getAttribute('class')
           .includes('has-linenumbers')) {
           console.log(node.getAttribute('class')
