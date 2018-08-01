@@ -199,7 +199,7 @@ function teiDocLinks() {
             return line.length > 0
           })
           .map((line, index) => {
-            return `<span class="line_numbering">${index+1}</span><span class="code_line">${line}</span>`;
+            return `<span class="line-numbering">${index+1}</span><span class="code-line">${line}</span>`;
           })
           .join('\n');
         node.parentNode.setAttribute('style', 'padding-left: 35px;');

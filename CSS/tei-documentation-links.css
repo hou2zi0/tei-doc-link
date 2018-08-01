@@ -73,7 +73,7 @@ pre {
   background-color: #282c34 !important;
 }
 
-span.line_numbering {
+span.line-numbering {
   text-align: right;
   display: inline-block;
   min-width: 2em;
@@ -85,4 +85,4 @@ span.line_numbering {
 
 
 
-span.code_line {}
+span.code-line {}
