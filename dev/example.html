@@ -145,10 +145,10 @@
 
     pre {
       border: 1px solid black;
-      white-space: pre;
       white-space: pre-wrap;
       word-wrap: break-word;
-      padding: 10px 15px 10px 15px;
+      padding: 0px 15px 0px 15px;
+      /* 10px 15px 10px 15px;*/
       background-color: #282c34 !important;
     }
 
@@ -272,6 +272,26 @@
       text-align: center;
     }
 
+    span.line-numbering {
+      text-align: right;
+      display: inline-block;
+      min-width: 2em;
+      position: relative;
+      padding-right: 0.5em;
+      margin-left: -2.5em;
+      margin-right: 0.2em;
+    }
+
+
+    code {
+      border: 0px solid black !important;
+      white-space: pre-wrap !important;
+      word-wrap: break-word !important;
+    }
+
+    span.code-line {}
+
+
     @media only screen and (min-width: 480px) {
       body {
         font-size: 14px;
@@ -285,13 +305,14 @@
     }
   </style>
   <link rel="stylesheet" href="https://hou2zi0.github.io/tei-doc-link/CSS/tei-documentation-links.css" />
-
 </head>
 
 <body>
   <h1>TEI Documentation Links</h1>
   <h2>Example</h2>
-  <pre><code class="xml tei-doc-link">&lt;correspDesc xml:id="unique_letter_id"&gt;
+  <pre><code class="xml tei-doc-link">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+    […]
+&lt;correspDesc xml:id="unique_letter_id"&gt;
   &lt;correspAction type="sent"&gt;
     &lt;persName xml:lang="de" ref="http://d-nb.info/gnd/118540238"&gt;
       &lt;forename&gt;Max&lt;/forename&gt;
@@ -315,11 +336,11 @@
   </p>
   <script>
     // const TEI_DOC_LINK = `xml tei-doc-link`;
-    // const TEI_DOC_LINK_CONFIG = {
-    //   "querySelectorAll": false,
-    //   "language": "english",
-    //   "lineNumbering": false // not yet implemented
-    // }
+    const TEI_DOC_LINK_CONFIG = {
+      //     "querySelectorAll": false,
+      //     "language": "english",
+      "lineNumbering": false, // not yet implemented
+    }
   </script>
   <script type="text/javascript" src="tei-documentation-links.js"></script>
 </body>

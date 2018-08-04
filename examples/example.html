@@ -272,6 +272,21 @@
       text-align: center;
     }
 
+    span.line-numbering {
+      text-align: right;
+      display: inline-block;
+      min-width: 2em;
+      position: relative;
+      padding-right: 0.5em;
+      margin-left: -2.5em;
+      margin-right: 0.2em;
+    }
+
+
+
+    span.code-line {}
+
+
     @media only screen and (min-width: 480px) {
       body {
         font-size: 14px;
@@ -291,7 +306,9 @@
 <body>
   <h1>TEI Documentation Links</h1>
   <h2>Example</h2>
-  <pre><code class="xml tei-doc-link">&lt;correspDesc xml:id="unique_letter_id"&gt;
+  <pre><code class="xml tei-doc-link">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+    […]
+&lt;correspDesc xml:id="unique_letter_id"&gt;
   &lt;correspAction type="sent"&gt;
     &lt;persName xml:lang="de" ref="http://d-nb.info/gnd/118540238"&gt;
       &lt;forename&gt;Max&lt;/forename&gt;
@@ -314,11 +331,11 @@
 </a></em>; for more information about the corresponding web service see <a href="https://correspsearch.net/index.xql?id=about&l=en">correspSearch</a> by <a href="https://github.com/StefanDumont">Stefan Dumont</a>.
   </p>
   <script>
-    const TEI_DOC_LINK = `xml tei-doc-link`;
+    // const TEI_DOC_LINK = `xml tei-doc-link`;
     const TEI_DOC_LINK_CONFIG = {
-      "querySelectorAll": false,
-      "language": "english",
-      "lineNumbering": false // not yet implemented
+      //     "querySelectorAll": false,
+      //     "language": "english",
+      "lineNumbering": true // not yet implemented
     }
   </script>
   <script type="text/javascript" src="https://hou2zi0.github.io/tei-doc-link/JS/tei-documentation-links.js"></script>
